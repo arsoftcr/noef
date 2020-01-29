@@ -12,7 +12,7 @@ namespace noef.controllers
 {
     public class selects
     {
-        public async Task<List<object>> Get(Conexion con,string consulta)
+        public async Task<List<object>> SelectFromDatabase(Conexion con,string consulta)
         {
 
 

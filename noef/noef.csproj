@@ -3,8 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.1</Version>
-    <Description>Realiza la consulta sql especificada de forma asíncrona y devuelve los resultados en un objeto {columna=xx,valor=xxx} .</Description>
+    <Version>1.0.0</Version>
+    <Description>Realiza la consulta en la base de datos sql server especificada de forma asíncrona y devuelve los resultados en un objeto {columna=xx,valor=xxx} .</Description>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/arsoftcr/noef</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/arsoftcr/noef</RepositoryUrl>
+    <RepositoryType />
+    <PackageIcon>about.jpg</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +19,17 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />
     <PackageReference Include="System.Linq" Version="4.3.0" />
     <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\Pictures\about.jpg">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
