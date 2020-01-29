@@ -6,7 +6,12 @@
     <authors>noef</authors>
     <owners>noef</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Package Description</description>
+    <license type="file">LICENSE.md</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>about.jpg</icon>
+    <projectUrl>https://github.com/arsoftcr/noef</projectUrl>
+    <description>Realiza la consulta en la base de datos sql server especificada de forma asíncrona y devuelve los resultados en un objeto {columna=xx,valor=xxx} .</description>
+    <repository url="https://github.com/arsoftcr/noef" />
     <dependencies>
       <group targetFramework=".NETStandard2.0">
         <dependency id="System.Collections" version="4.3.0" exclude="Build,Analyzers" />
@@ -18,6 +23,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\rix\source\repos\noef\noef\bin\Debug\netstandard2.0\noef.dll" target="lib\netstandard2.0\noef.dll" />
+    <file src="C:\Users\rviquez\Source\Repos\arsoftcr\noef\noef\bin\Debug\netstandard2.0\noef.dll" target="lib\netstandard2.0\noef.dll" />
+    <file src="C:\Users\rviquez\Pictures\about.jpg" target="about.jpg" />
+    <file src="C:\Users\rviquez\Source\Repos\arsoftcr\noef\LICENSE.md" target="LICENSE.md" />
   </files>
 </package>

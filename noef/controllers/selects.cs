@@ -1,6 +1,7 @@
 ﻿using noef.models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
@@ -20,85 +21,46 @@ namespace noef.controllers
 
             try
             {
-                bool hayConsulta = consulta != null ? true : false;
-
-                if (hayConsulta)
-                {
-                    bool servidor = !string.IsNullOrWhiteSpace(con.Servidor) ? true : false;
-
-                    bool bd = !string.IsNullOrWhiteSpace(con.BD) ? true : false;
-
-                    bool usuario = !string.IsNullOrWhiteSpace(con.Usuario) ? true : false;
-
-                    bool clave = !string.IsNullOrWhiteSpace(con.Password) ? true : false;
-
-                   
-
-                    if (servidor && bd && usuario && clave )
-                    {
-
-                        
-
-
-                        using (sqlhandle sql = new sqlhandle(con.Servidor, con.BD, con.Usuario, con.Password))
+                        using (var conexion=new SqlConnection("Server=" + con.Servidor + ";Initial Catalog=" + con.BD + ";User Id=" + con.Usuario + ";Password=" + con.Password + ";Persist Security Info=True;MultipleActiveResultSets=True;"))
                         {
 
-                           await sql.conectar();
+                            await conexion.OpenAsync();
 
-                            sql.Consulta = consulta;
-
-                            using (sql.Comando = new SqlCommand(sql.Consulta, sql.Conexionn))
+                            using (var comando=new SqlCommand(consulta,conexion))
                             {
-                                await sql.Comando.ExecuteNonQueryAsync();
+                                var reader = await comando.ExecuteReaderAsync();
 
-
-                                using (SqlDataReader lector = await sql.Comando.ExecuteReaderAsync())
-                                {
-                                    while (await lector.ReadAsync())
+                                
+                                    foreach (var item in reader.Cast<DbDataRecord>())
                                     {
-                                        
-
-                                        foreach (var item in lector.Cast<DbDataRecord>())
+                                        for (int i = 0; i < item.FieldCount; i++)
                                         {
-                                            for (int i = 0; i < item.FieldCount; i++)
+                                            if (item.GetValue(i) != null)
                                             {
-                                                if (item.GetValue(i)!=null)
-                                                {
 
-                                                    var anonimo = new { columna = item.GetName(i), valor = item.GetValue(i) };
+                                                var anonimo = new { columna = item.GetName(i), valor = item.GetValue(i) };
 
 
-                                                    resultados.Add(anonimo);
-                                                }
+                                                resultados.Add(anonimo);
                                             }
                                         }
                                     }
-
-
-                                }
+                              
                             }
-                        }
-
+                        }  
 
 
                         return resultados;
 
-                    }
-                    else
-                    {
-                        return null;
-                    }
-
-                }
-                else
-                {
-                    return null;
-                }
             }
             catch (Exception e)
             {
 
-                return null;
+                var anonimo = new { columna = "error", valor = e.ToString() };
+
+                resultados.Add(anonimo);
+
+                return resultados;
             }
 
 

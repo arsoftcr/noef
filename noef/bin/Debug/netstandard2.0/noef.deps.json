@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "noef/1.0.1": {
+      "noef/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "System.Collections": "4.3.0",
@@ -292,7 +292,7 @@
     }
   },
   "libraries": {
-    "noef/1.0.1": {
+    "noef/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -321,7 +321,7 @@
     "NETStandard.Library/2.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6Ajuayr6HHZWt7vI4zOPPSl3b8gXPY5xQrykbPzjBt+JuLo8K9WyJ59joMoZ+YzQV0KVOdsX5iQOs3C7to8ncA==",
+      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
