@@ -1,5 +1,5 @@
 # noef
-Realiza cualquier consulta sql en forma asíncrona y retorna los resultados en un objeto genérico {columna=xxx,valor=xxx}
+Realiza cualquier consulta sql en forma asíncrona y retorna los resultados en una lista de un objeto genérico {columna=xxx,valor=xxx}
 
 
 Se debe instalar el paquete nuget en visual studio o por consola: Install-Package noef -Version 1.0.0
