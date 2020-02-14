@@ -1,25 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rviquez\\Source\\Repos\\arsoftcr\\noef\\noef\\noef.csproj": {}
+    "C:\\Users\\rix\\Source\\Repos\\arsoftcr\\noef\\noef\\noef.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rviquez\\Source\\Repos\\arsoftcr\\noef\\noef\\noef.csproj": {
-      "version": "1.0.0",
+    "C:\\Users\\rix\\Source\\Repos\\arsoftcr\\noef\\noef\\noef.csproj": {
+      "version": "2.0.3",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rviquez\\Source\\Repos\\arsoftcr\\noef\\noef\\noef.csproj",
+        "projectUniqueName": "C:\\Users\\rix\\Source\\Repos\\arsoftcr\\noef\\noef\\noef.csproj",
         "projectName": "noef",
-        "projectPath": "C:\\Users\\rviquez\\Source\\Repos\\arsoftcr\\noef\\noef\\noef.csproj",
-        "packagesPath": "C:\\Users\\rviquez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rviquez\\Source\\Repos\\arsoftcr\\noef\\noef\\obj\\",
+        "projectPath": "C:\\Users\\rix\\Source\\Repos\\arsoftcr\\noef\\noef\\noef.csproj",
+        "packagesPath": "C:\\Users\\rix\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rix\\Source\\Repos\\arsoftcr\\noef\\noef\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\rviquez\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Users\\rix\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -27,10 +27,11 @@
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\rviquez\\Desktop": {},
-          "I:\\Nugets": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Users\\rix\\Desktop": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/G2vM3PoVr8r9Sc9lFTLlU77qAGWAUDuLhs76y1BWEsKXGDx5m4/api": {}
         },
         "frameworks": {
           "netstandard2.0": {
@@ -46,11 +47,23 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.19, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[4.1.3, )"
+            },
+            "Oracle.ManagedDataAccess": {
+              "target": "Package",
+              "version": "[19.6.0, )"
             },
             "System.Collections": {
               "target": "Package",

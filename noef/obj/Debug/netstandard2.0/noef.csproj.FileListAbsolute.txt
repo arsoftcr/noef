@@ -13,3 +13,11 @@ C:\Users\rviquez\Source\Repos\arsoftcr\noef\noef\obj\Debug\netstandard2.0\noef.A
 C:\Users\rviquez\Source\Repos\arsoftcr\noef\noef\obj\Debug\netstandard2.0\noef.AssemblyInfo.cs
 C:\Users\rviquez\Source\Repos\arsoftcr\noef\noef\obj\Debug\netstandard2.0\noef.dll
 C:\Users\rviquez\Source\Repos\arsoftcr\noef\noef\obj\Debug\netstandard2.0\noef.pdb
+C:\Users\rix\source\repos\arsoftcr\noef\noef\bin\Debug\netstandard2.0\noef.deps.json
+C:\Users\rix\source\repos\arsoftcr\noef\noef\bin\Debug\netstandard2.0\noef.dll
+C:\Users\rix\source\repos\arsoftcr\noef\noef\bin\Debug\netstandard2.0\noef.pdb
+C:\Users\rix\source\repos\arsoftcr\noef\noef\obj\Debug\netstandard2.0\noef.AssemblyInfoInputs.cache
+C:\Users\rix\source\repos\arsoftcr\noef\noef\obj\Debug\netstandard2.0\noef.AssemblyInfo.cs
+C:\Users\rix\source\repos\arsoftcr\noef\noef\obj\Debug\netstandard2.0\noef.dll
+C:\Users\rix\source\repos\arsoftcr\noef\noef\obj\Debug\netstandard2.0\noef.pdb
+C:\Users\rix\Source\Repos\arsoftcr\noef\noef\obj\Debug\netstandard2.0\noef.csprojAssemblyReference.cache
