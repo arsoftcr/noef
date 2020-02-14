@@ -2,7 +2,7 @@
 Realiza cualquier consulta  en mysql o postgres o sql server u oracle en forma asíncrona y retorna los resultados en una lista de objetos genéricos {columna=xxx,valor=xxx}
 
 
-Se debe instalar el paquete nuget en visual studio o por consola: https://www.nuget.org/packages/noef/ [![NuGet](https://img.shields.io/nuget/v/CarouselView.FormsPlugin.svg?label=NuGet)](https://www.nuget.org/packages/noef/)
+Se debe instalar el paquete nuget en visual studio o por consola: https://www.nuget.org/packages/noef/ [![NuGet](https://pbs.twimg.com/profile_images/888442960601202688/6I3oEOP4_400x400.jpg)](https://www.nuget.org/packages/noef/)
 
 Se debe crear una instancia con los datos de conexión a la base de datos:
   
