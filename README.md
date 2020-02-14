@@ -2,7 +2,7 @@
 Realiza cualquier consulta  en mysql o postgres o sql server u oracle en forma asíncrona y retorna los resultados en una lista de objetos genéricos {columna=xxx,valor=xxx}
 
 
-Se debe instalar el paquete nuget en visual studio o por consola: https://www.nuget.org/packages/CarouselView.FormsPlugin/ [![NuGet]
+Se debe instalar el paquete nuget en visual studio o por consola: https://www.nuget.org/packages/CarouselView.FormsPlugin/ [![NuGet](https://img.shields.io/nuget/v/CarouselView.FormsPlugin.svg?label=NuGet)](https://www.nuget.org/packages/CarouselView.FormsPlugin/)
 
 Se debe crear una instancia con los datos de conexión a la base de datos:
   
