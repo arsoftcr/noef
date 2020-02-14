@@ -66,7 +66,7 @@ Y por último se hace la consulta pasando como parámetro la instancia de la con
           var resultado=await postgresCon.SelectFromDatabase("cadenaConexionPostgres","select * from loquesea");
           
           
-Para realizar un insert a la bd se necesita crear una instancia de la clase InsertDatabase y pasarle un diccionario de datos con los parámetros y sus valores de la siguiente forma:
+Para realizar un insert a la bd se necesita crear una instancia de la clase Insert y pasarle un diccionario de datos con los parámetros y sus valores de la siguiente forma:
 
 
            noef.controllers.sql.Insert sqlInsert = new noef.controllers.sql.Insert();
