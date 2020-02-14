@@ -76,7 +76,19 @@ Para realizar un insert a la bd se necesita crear una instancia de la clase Inse
 
             Dictionary<string,object> diccio = new Dictionary<string,object>();
 
-            diccio.Add("@desc","test");
+            diccio.Add("@desc","testsql");
+            
+             Dictionary<string,object> diccio = new Dictionary<string,object>();
+
+            diccio.Add("@desc","testmysql");
+            
+             Dictionary<string,object> diccio = new Dictionary<string,object>();
+
+            diccio.Add("desc","testpostgres");
+            
+             Dictionary<string,object> diccio = new Dictionary<string,object>();
+
+            diccio.Add("desc","testoracle");
 
             var resultado = await sqlInsert.InsertDatabase(sql,"insert into loquesea(Descripcion)values(@desc)",diccio);
               var resultado = await mysqlInsert.InsertDatabase(mysql,"insert into loquesea(Descripcion)values(@desc)",diccio);
