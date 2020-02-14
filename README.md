@@ -95,5 +95,6 @@ Para realizar un insert a la bd se necesita crear una instancia de la clase Inse
           
           
           
+Nota: Los métodos de consulta  a la base de datos devuelven una lista de una lista de objetos: List<List<object>>. Para convertir esto a una clase de algún tipo se puede hacer con Newtonsoft  o con un switch por medio de los valores de las columnas. Próximanent estaremos creando uno o varios métodos para facilitar esto ;).
           
        
