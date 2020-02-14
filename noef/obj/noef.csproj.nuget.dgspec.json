@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rix\\Source\\Repos\\arsoftcr\\noef\\noef\\noef.csproj": {}
+    "C:\\Users\\rix\\source\\repos\\arsoftcr\\noef\\noef\\noef.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rix\\Source\\Repos\\arsoftcr\\noef\\noef\\noef.csproj": {
+    "C:\\Users\\rix\\source\\repos\\arsoftcr\\noef\\noef\\noef.csproj": {
       "version": "2.0.3",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rix\\Source\\Repos\\arsoftcr\\noef\\noef\\noef.csproj",
+        "projectUniqueName": "C:\\Users\\rix\\source\\repos\\arsoftcr\\noef\\noef\\noef.csproj",
         "projectName": "noef",
-        "projectPath": "C:\\Users\\rix\\Source\\Repos\\arsoftcr\\noef\\noef\\noef.csproj",
+        "projectPath": "C:\\Users\\rix\\source\\repos\\arsoftcr\\noef\\noef\\noef.csproj",
         "packagesPath": "C:\\Users\\rix\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rix\\Source\\Repos\\arsoftcr\\noef\\noef\\obj\\",
+        "outputPath": "C:\\Users\\rix\\source\\repos\\arsoftcr\\noef\\noef\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

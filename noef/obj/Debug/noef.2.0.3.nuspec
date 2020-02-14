@@ -26,8 +26,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\rix\Source\Repos\arsoftcr\noef\noef\bin\Debug\netstandard2.0\noef.dll" target="lib\netstandard2.0\noef.dll" />
+    <file src="C:\Users\rix\source\repos\arsoftcr\noef\noef\bin\Debug\netstandard2.0\noef.dll" target="lib\netstandard2.0\noef.dll" />
     <file src="C:\Users\rix\Pictures\about.jpg" target="about.jpg" />
-    <file src="C:\Users\rix\Source\Repos\arsoftcr\noef\LICENSE.md" target="LICENSE.md" />
+    <file src="C:\Users\rix\source\repos\arsoftcr\noef\LICENSE.md" target="LICENSE.md" />
   </files>
 </package>

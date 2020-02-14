@@ -17,7 +17,7 @@ namespace noef.controllers.sql
 
             List<List<object>> resultados = new List<List<object>>();
 
-            List<object> columnas = new List<object>();
+           
 
             try
             {
@@ -33,6 +33,8 @@ namespace noef.controllers.sql
 
                         foreach (var item in reader.Cast<DbDataRecord>())
                         {
+                            List<object> columnas = new List<object>();
+
                             for (int i = 0; i < item.FieldCount; i++)
                             {
                                 if (item.GetValue(i) != null)
@@ -57,6 +59,7 @@ namespace noef.controllers.sql
             }
             catch (Exception e)
             {
+                List<object> columnas = new List<object>();
 
                 var anonimo = new { columna = "error", valor = e.ToString() };
 
@@ -78,7 +81,7 @@ namespace noef.controllers.sql
 
             List<List<object>> resultados = new List<List<object>>();
 
-            List<object> columnas = new List<object>();
+            
 
             try
             {
@@ -94,6 +97,7 @@ namespace noef.controllers.sql
 
                         foreach (var item in reader.Cast<DbDataRecord>())
                         {
+                            List<object> columnas = new List<object>();
                             for (int i = 0; i < item.FieldCount; i++)
                             {
                                 if (item.GetValue(i) != null)
@@ -118,7 +122,7 @@ namespace noef.controllers.sql
             }
             catch (Exception e)
             {
-
+                List<object> columnas = new List<object>();
                 var anonimo = new { columna = "error", valor = e.ToString() };
 
                 columnas.Add(anonimo);
