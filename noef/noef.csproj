@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.3</Version>
-    <Description>Realiza la consulta en la base de datos sql server especificada de forma asíncrona y devuelve los resultados en un objeto {columna=xx,valor=xxx} .</Description>
+    <Version>2.0.4</Version>
+    <Description>Realiza la consulta en la base de datos mysql,postgres,sql server,oracle especificada de forma asíncrona y devuelve los resultados en una lista de objetos anónimos {columna=xx,valor=xxx} .</Description>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/arsoftcr/noef</PackageProjectUrl>
     <RepositoryUrl>https://github.com/arsoftcr/noef</RepositoryUrl>
@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\..\..\Pictures\about.jpg">
+    <None Include="..\..\..\Pictures\about.jpg">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
