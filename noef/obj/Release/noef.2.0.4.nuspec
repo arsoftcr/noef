@@ -26,8 +26,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\rix\Desktop\noef\noef\bin\Release\netstandard2.0\noef.dll" target="lib\netstandard2.0\noef.dll" />
-    <file src="C:\Users\rix\Pictures\about.jpg" target="about.jpg" />
-    <file src="C:\Users\rix\Desktop\noef\LICENSE.md" target="LICENSE.md" />
+    <file src="C:\Users\rviquez\Source\Repos\noef\noef\bin\Release\netstandard2.0\noef.dll" target="lib\netstandard2.0\noef.dll" />
+    <file src="C:\Users\rviquez\Source\Pictures\about.jpg" target="about.jpg" />
+    <file src="C:\Users\rviquez\Source\Repos\noef\LICENSE.md" target="LICENSE.md" />
   </files>
 </package>

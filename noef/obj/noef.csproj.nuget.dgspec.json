@@ -1,25 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rix\\Desktop\\noef\\noef\\noef.csproj": {}
+    "C:\\Users\\rviquez\\Source\\Repos\\noef\\noef\\noef.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rix\\Desktop\\noef\\noef\\noef.csproj": {
-      "version": "2.0.4",
+    "C:\\Users\\rviquez\\Source\\Repos\\noef\\noef\\noef.csproj": {
+      "version": "2.0.5",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rix\\Desktop\\noef\\noef\\noef.csproj",
+        "projectUniqueName": "C:\\Users\\rviquez\\Source\\Repos\\noef\\noef\\noef.csproj",
         "projectName": "noef",
-        "projectPath": "C:\\Users\\rix\\Desktop\\noef\\noef\\noef.csproj",
-        "packagesPath": "C:\\Users\\rix\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rix\\Desktop\\noef\\noef\\obj\\",
+        "projectPath": "C:\\Users\\rviquez\\Source\\Repos\\noef\\noef\\noef.csproj",
+        "packagesPath": "C:\\Users\\rviquez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rviquez\\Source\\Repos\\noef\\noef\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\rix\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
+          "C:\\Users\\rviquez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -27,11 +27,9 @@
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\rix\\Desktop": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.devexpress.com/G2vM3PoVr8r9Sc9lFTLlU77qAGWAUDuLhs76y1BWEsKXGDx5m4/api": {}
+          "C:\\Users\\rviquez\\Desktop": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {

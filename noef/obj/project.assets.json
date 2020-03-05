@@ -1468,7 +1468,7 @@
       ]
     },
     "NETStandard.Library/2.0.3": {
-      "sha512": "6Ajuayr6HHZWt7vI4zOPPSl3b8gXPY5xQrykbPzjBt+JuLo8K9WyJ59joMoZ+YzQV0KVOdsX5iQOs3C7to8ncA==",
+      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "type": "package",
       "path": "netstandard.library/2.0.3",
       "files": [
@@ -5037,26 +5037,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rix\\.nuget\\packages\\": {},
+    "C:\\Users\\rviquez\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "2.0.4",
+    "version": "2.0.5",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rix\\Desktop\\noef\\noef\\noef.csproj",
+      "projectUniqueName": "C:\\Users\\rviquez\\Source\\Repos\\noef\\noef\\noef.csproj",
       "projectName": "noef",
-      "projectPath": "C:\\Users\\rix\\Desktop\\noef\\noef\\noef.csproj",
-      "packagesPath": "C:\\Users\\rix\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rix\\Desktop\\noef\\noef\\obj\\",
+      "projectPath": "C:\\Users\\rviquez\\Source\\Repos\\noef\\noef\\noef.csproj",
+      "packagesPath": "C:\\Users\\rviquez\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rviquez\\Source\\Repos\\noef\\noef\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\rix\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
+        "C:\\Users\\rviquez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -5064,11 +5064,9 @@
         "netstandard2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\rix\\Desktop": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.devexpress.com/G2vM3PoVr8r9Sc9lFTLlU77qAGWAUDuLhs76y1BWEsKXGDx5m4/api": {}
+        "C:\\Users\\rviquez\\Desktop": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
@@ -5142,7 +5140,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Oracle.ManagedDataAccess 19.6.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "message": "El paquete \"Oracle.ManagedDataAccess 19.6.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \".NETStandard,Version=v2.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "Oracle.ManagedDataAccess",
       "targetGraphs": [
         ".NETStandard,Version=v2.0"

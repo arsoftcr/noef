@@ -2,9 +2,9 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>noef</id>
-    <version>2.0.4</version>
-    <authors>noef</authors>
-    <owners>noef</owners>
+    <version>2.0.5</version>
+    <authors>Arsoft CR</authors>
+    <owners>Arsoft CR</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="file">LICENSE.md</license>
     <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
@@ -26,8 +26,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\rix\Desktop\noef\noef\bin\Debug\netstandard2.0\noef.dll" target="lib\netstandard2.0\noef.dll" />
-    <file src="C:\Users\rix\Pictures\about.jpg" target="about.jpg" />
-    <file src="C:\Users\rix\Desktop\noef\LICENSE.md" target="LICENSE.md" />
+    <file src="C:\Users\rviquez\Source\Repos\noef\noef\bin\Release\netstandard2.0\noef.dll" target="lib\netstandard2.0\noef.dll" />
+    <file src="C:\Users\rviquez\Pictures\about.jpg" target="about.jpg" />
+    <file src="C:\Users\rviquez\Source\Repos\noef\LICENSE.md" target="LICENSE.md" />
   </files>
 </package>
