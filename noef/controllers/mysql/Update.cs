@@ -1,34 +1,33 @@
-﻿using noef.models;
+﻿using MySql.Data.MySqlClient;
+using noef.models;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace noef.controllers.sql
+namespace noef.controllers.mysql
 {
-    public class Delete
+    public class Update
     {
-        public async Task<int> DeleteDatabase(ConexionSQL con, string consulta, Dictionary<string, object> paramts)
+        public async Task<int> UpdateDatabase(ConexionMysql con, string consulta, Dictionary<string, object> paramts)
         {
-
 
 
 
             try
             {
-                using (var conexion = new SqlConnection("Server=" + con.Servidor + ";Initial Catalog=" + con.BD + ";User Id=" + con.Usuario + ";Password=" + con.Password + ";Persist Security Info=True;MultipleActiveResultSets=True;"))
+                using (var conexion = new MySqlConnection("server=" + con.Server + ";port=" + con.Port + ";username=" + con.Username + ";password=" + con.Password + ";SslMode = none;database=" + con.Bd + ""))
                 {
 
                     await conexion.OpenAsync();
 
-                    using (var comando = new SqlCommand(consulta, conexion))
+                    using (var comando = new MySqlCommand(consulta, conexion))
                     {
+
                         foreach (var item in paramts)
                         {
                             comando.Parameters.AddWithValue(item.Key, item.Value);
                         }
-
                         var reader = await comando.ExecuteReaderAsync();
 
 
@@ -53,26 +52,24 @@ namespace noef.controllers.sql
 
 
 
-        public async Task<int> DeleteDatabase(string cadenaConexion, string consulta, Dictionary<string, object> paramts)
+        public async Task<int> UpdateDatabase(string cadenaConexion, string consulta, Dictionary<string, object> paramts)
         {
-
-
 
 
             try
             {
-                using (var conexion = new SqlConnection(cadenaConexion))
+                using (var conexion = new MySqlConnection(cadenaConexion))
                 {
 
                     await conexion.OpenAsync();
 
-                    using (var comando = new SqlCommand(consulta, conexion))
+                    using (var comando = new MySqlCommand(consulta, conexion))
                     {
+
                         foreach (var item in paramts)
                         {
                             comando.Parameters.AddWithValue(item.Key, item.Value);
                         }
-
                         var reader = await comando.ExecuteReaderAsync();
 
 

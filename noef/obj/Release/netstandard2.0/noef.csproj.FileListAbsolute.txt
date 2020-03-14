@@ -23,7 +23,6 @@ C:\Users\rix\Desktop\noef\noef\obj\Release\netstandard2.0\noef.pdb
 C:\Users\rviquez\Source\Repos\noef\noef\bin\Release\netstandard2.0\noef.deps.json
 C:\Users\rviquez\Source\Repos\noef\noef\bin\Release\netstandard2.0\noef.dll
 C:\Users\rviquez\Source\Repos\noef\noef\bin\Release\netstandard2.0\noef.pdb
-C:\Users\rviquez\Source\Repos\noef\noef\obj\Release\netstandard2.0\noef.csprojAssemblyReference.cache
 C:\Users\rviquez\Source\Repos\noef\noef\obj\Release\netstandard2.0\noef.AssemblyInfoInputs.cache
 C:\Users\rviquez\Source\Repos\noef\noef\obj\Release\netstandard2.0\noef.AssemblyInfo.cs
 C:\Users\rviquez\Source\Repos\noef\noef\obj\Release\netstandard2.0\noef.dll

@@ -12,6 +12,7 @@ namespace noef.models
         private string bD;
         private string usuario;
         private string password;
+        private string compania;
 
         public string Servidor { get => servidor; set => servidor = value; }
 
@@ -20,7 +21,7 @@ namespace noef.models
         public string Usuario { get => usuario; set => usuario = value; }
 
         public string Password { get => password; set => password = value; }
-
+        public string Compania { get => compania; set => compania = value; }
     }
 
     public class ConexionPostgres
@@ -47,12 +48,13 @@ namespace noef.models
         private string userId;
         private string password;
         private string servicio;
-
+        private string compania;
         public string Datasource { get => datasource; set => datasource = value; }
         public string Port { get => port; set => port = value; }
         public string UserId { get => userId; set => userId = value; }
         public string Password { get => password; set => password = value; }
         public string Servicio { get => servicio; set => servicio = value; }
+        public string Compania { get => compania; set => compania = value; }
     }
 
     public class ConexionMysql

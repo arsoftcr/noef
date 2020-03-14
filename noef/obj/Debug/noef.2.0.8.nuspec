@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>noef</id>
+    <version>2.0.8</version>
+    <authors>Arsoft CR</authors>
+    <owners>Arsoft CR</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE.md</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>about.jpg</icon>
+    <projectUrl>https://github.com/arsoftcr/noef</projectUrl>
+    <description>Realiza la consulta en la base de datos mysql,postgres,sql server,oracle especificada de forma asíncrona y devuelve los resultados en una lista de objetos anónimos {columna=xx,valor=xxx} .</description>
+    <repository url="https://github.com/arsoftcr/noef" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="MySql.Data" version="8.0.19" exclude="Build,Analyzers" />
+        <dependency id="Npgsql" version="4.1.3" exclude="Build,Analyzers" />
+        <dependency id="Oracle.ManagedDataAccess" version="19.6.0" exclude="Build,Analyzers" />
+        <dependency id="System.Collections" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Data.Common" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Data.SqlClient" version="4.8.0" exclude="Build,Analyzers" />
+        <dependency id="System.Linq" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Tasks" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\rviquez\Source\Repos\noef\noef\bin\Debug\netstandard2.0\noef.dll" target="lib\netstandard2.0\noef.dll" />
+    <file src="C:\Users\rviquez\Pictures\about.jpg" target="about.jpg" />
+    <file src="C:\Users\rviquez\Source\Repos\noef\LICENSE.md" target="LICENSE.md" />
+  </files>
+</package>

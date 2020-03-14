@@ -1,35 +1,33 @@
 ﻿using noef.models;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace noef.controllers.sql
+namespace noef.controllers.oracle
 {
-    public class Delete
+    public class Update
     {
-        public async Task<int> DeleteDatabase(ConexionSQL con, string consulta, Dictionary<string, object> paramts)
+        public async Task<int> UpdateDatabase(ConexionOracle con, string consulta, Dictionary<string, object> paramts)
         {
-
-
 
 
             try
             {
-                using (var conexion = new SqlConnection("Server=" + con.Servidor + ";Initial Catalog=" + con.BD + ";User Id=" + con.Usuario + ";Password=" + con.Password + ";Persist Security Info=True;MultipleActiveResultSets=True;"))
+                using (var conexion = new OracleConnection("Data Source=" + con.Datasource + ":" + con.Port + "/" + con.Servicio + ";User Id=" + con.UserId + ";Password=" + con.Password + ";"))
                 {
 
                     await conexion.OpenAsync();
 
-                    using (var comando = new SqlCommand(consulta, conexion))
+                    using (var comando = new OracleCommand(consulta, conexion))
                     {
                         foreach (var item in paramts)
                         {
-                            comando.Parameters.AddWithValue(item.Key, item.Value);
+                            comando.Parameters.Add(item.Key, item.Value);
                         }
-
                         var reader = await comando.ExecuteReaderAsync();
+
 
 
 
@@ -53,27 +51,25 @@ namespace noef.controllers.sql
 
 
 
-        public async Task<int> DeleteDatabase(string cadenaConexion, string consulta, Dictionary<string, object> paramts)
+        public async Task<int> UpdateDatabase(string cadenaConexion, string consulta, Dictionary<string, object> paramts)
         {
-
-
 
 
             try
             {
-                using (var conexion = new SqlConnection(cadenaConexion))
+                using (var conexion = new OracleConnection(cadenaConexion))
                 {
 
                     await conexion.OpenAsync();
 
-                    using (var comando = new SqlCommand(consulta, conexion))
+                    using (var comando = new OracleCommand(consulta, conexion))
                     {
                         foreach (var item in paramts)
                         {
-                            comando.Parameters.AddWithValue(item.Key, item.Value);
+                            comando.Parameters.Add(item.Key.Replace(":", ""), item.Value);
                         }
-
                         var reader = await comando.ExecuteReaderAsync();
+
 
 
 
