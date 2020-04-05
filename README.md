@@ -16,7 +16,7 @@ Se debe instalar el paquete nuget en visual studio o por consola: https://www.nu
 
 Se debe crear una instancia con los datos de conexión a la base de datos:
   
-         Conexion mysql = new Conexion
+         Conexion conexion = new Conexion
         {
             Server= "xxx",
             Port="xx",//opcional en sql
@@ -37,10 +37,10 @@ Se debe crear una instancia con los datos de conexión a la base de datos:
         
 Y por último se hace la consulta pasando como parámetro la instancia de la conexión y la consulta sql:
 
-          var resultado=await mysqlCon.SelectFromDatabase(mysql,"select columnaRequeridaEnLosResultados from loquesea");
-          var resultado=await sqlCon.SelectFromDatabase(sql,"select columnaRequeridaEnLosResultados from loquesea");
-          var resultado=await oracleCon.SelectFromDatabase(oracle,"select columnaRequeridaEnLosResultados from loquesea");
-          var resultado=await postgresCon.SelectFromDatabase(postgres,"select columnaRequeridaEnLosResultados from loquesea");
+          var resultado=await mysqlCon.SelectFromDatabase(conexion,"select columnaRequeridaEnLosResultados from loquesea");
+          var resultado=await sqlCon.SelectFromDatabase(conexion,"select columnaRequeridaEnLosResultados from loquesea");
+          var resultado=await oracleCon.SelectFromDatabase(conexion,"select columnaRequeridaEnLosResultados from loquesea");
+          var resultado=await postgresCon.SelectFromDatabase(conexion,"select columnaRequeridaEnLosResultados from loquesea");
           
   Nota:También se puede realizar la operación pasando la cadena de conexión como un string:
   
@@ -79,10 +79,10 @@ Para realizar un insert a la bd se necesita crear una instancia de la clase Inse
 
             diccio.Add("desc","testoracle");
 
-            var resultado = await sqlInsert.InsertDatabase(sql,"insert into loquesea(Descripcion)values(@desc)",diccio);
-              var resultado = await mysqlInsert.InsertDatabase(mysql,"insert into loquesea(Descripcion)values(@desc)",diccio);
-                var resultado = await postgresInsert.InsertDatabase(postgres,"insert into loquesea(Descripcion)values(@desc)",diccio);
-                  var resultado = await oracleInsert.InsertDatabase(oracle,"insert into loquesea(Descripcion)values(@desc)",diccio);
+            var resultado = await sqlInsert.InsertDatabase(conexion,"insert into loquesea(Descripcion)values(@desc)",diccio);
+              var resultado = await mysqlInsert.InsertDatabase(conexion,"insert into loquesea(Descripcion)values(@desc)",diccio);
+                var resultado = await postgresInsert.InsertDatabase(conexion,"insert into loquesea(Descripcion)values(@desc)",diccio);
+                  var resultado = await oracleInsert.InsertDatabase(conexion,"insert into loquesea(Descripcion)values(@desc)",diccio);
                   
 
             if (resultado == 0)
