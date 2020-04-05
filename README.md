@@ -1,5 +1,5 @@
 # noef
-Realiza cualquier consulta  en mysql o postgres o sql server u oracle en forma asíncrona y retorna los resultados en una lista de objetos genéricos {columna=xxx,valor=xxx}
+Realiza cualquier consulta  en mysql o postgres o sql server u oracle en forma asíncrona y retorna los resultados en una lista de Dictionary<string,object>
 
 
 Se debe instalar el paquete nuget en visual studio o por consola: https://www.nuget.org/packages/noef/ [![NuGet](https://img.shields.io/nuget/v/CarouselView.FormsPlugin.svg?label=NuGet)](https://www.nuget.org/packages/noef/)
@@ -20,39 +20,13 @@ Se debe crear una instancia con los datos de conexión a la base de datos:
         {
             Server= "xxx",
             Port="xx",
-            Bd="xxxx",
+            BaseDatos="xxxx",//en oracle se pone el nombre del servicio
             Username= "xx",
             Password= "xxxx"
 
         };
 
-        ConexionPostgres postgres = new ConexionPostgres
-        {
-            Host="xxx",
-            Port="xxx",
-            UserId="xxx",
-            Password="xxx",
-            Database="xxx"
-        };
-
-        ConexionOracle oracle = new ConexionOracle
-        {
-            Datasource="xxx",
-            Port="xxx",
-            Password="xxxx",
-            UserId="xxx",
-            Servicio="xx"
-        };
-
-        ConexionSQL sql = new ConexionSQL
-        {
-            Servidor="xxx",
-            Usuario="xxx",
-            Password="xxx",
-            BD="xxxx"
-        };
-   
-   
+      
  Seguidamente se instancia la clase para hacer las consultas:
  
         noef.controllers.mysql.Select mysqlCon = new noef.controllers.mysql.Select();
@@ -63,18 +37,23 @@ Se debe crear una instancia con los datos de conexión a la base de datos:
         
 Y por último se hace la consulta pasando como parámetro la instancia de la conexión y la consulta sql:
 
-          var resultado=await mysqlCon.SelectFromDatabase(mysql,"select * from loquesea");
-          var resultado=await sqlCon.SelectFromDatabase(sql,"select * from loquesea");
-          var resultado=await oracleCon.SelectFromDatabase(oracle,"select * from loquesea");
-          var resultado=await postgresCon.SelectFromDatabase(postgres,"select * from loquesea");
+          var resultado=await mysqlCon.SelectFromDatabase(mysql,"select columnaRequeridaEnLosResultados from loquesea");
+          var resultado=await sqlCon.SelectFromDatabase(sql,"select columnaRequeridaEnLosResultados from loquesea");
+          var resultado=await oracleCon.SelectFromDatabase(oracle,"select columnaRequeridaEnLosResultados from loquesea");
+          var resultado=await postgresCon.SelectFromDatabase(postgres,"select columnaRequeridaEnLosResultados from loquesea");
           
   Nota:También se puede realizar la operación pasando la cadena de conexión como un string:
   
-          var resultado=await mysqlCon.SelectFromDatabase("cadenaConexionMysql","select * from loquesea");
-          var resultado=await sqlCon.SelectFromDatabase("cadenaConexionSql","select * from loquesea");
-          var resultado=await oracleCon.SelectFromDatabase("cadenaConexionOracle","select * from loquesea");
-          var resultado=await postgresCon.SelectFromDatabase("cadenaConexionPostgres","select * from loquesea");
-          
+          var resultado=await mysqlCon.SelectFromDatabase("cadenaConexionMysql","select columnaRequeridaEnLosResultados from loquesea");
+          var resultado=await sqlCon.SelectFromDatabase("cadenaConexionSql","select columnaRequeridaEnLosResultados from loquesea");
+          var resultado=await oracleCon.SelectFromDatabase("cadenaConexionOracle","select columnaRequeridaEnLosResultados from loquesea");
+          var resultado=await postgresCon.SelectFromDatabase("cadenaConexionPostgres","select columnaRequeridaEnLosResultados from loquesea");
+         
+         
+         
+Los resultados se podrian acceder de la siguiente forma:
+
+          resultado.foreach((x)=>{Console.WriteLine($"{x["columnaRequeridaEnLosResultados"]}");});
           
 Para realizar un insert a la bd se necesita crear una instancia de la clase Insert y pasarle un diccionario de datos con los parámetros y sus valores de la siguiente forma:
 
@@ -116,7 +95,6 @@ Para realizar un insert a la bd se necesita crear una instancia de la clase Inse
             }
           
           
-          
-Nota: Los métodos de consulta  a la base de datos devuelven una lista de una lista de objetos: List<List < object > >. Para convertir esto a una clase de algún tipo se puede hacer con Newtonsoft  o con un switch por medio de los valores de las columnas. Próximanente estaremos creando uno o varios métodos para facilitar esto ;).
+     
           
        
