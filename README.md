@@ -16,10 +16,10 @@ Se debe instalar el paquete nuget en visual studio o por consola: https://www.nu
 
 Se debe crear una instancia con los datos de conexión a la base de datos:
   
-         ConexionMysql mysql = new ConexionMysql
+         Conexion mysql = new Conexion
         {
             Server= "xxx",
-            Port="xx",
+            Port="xx",//opcional en sql
             BaseDatos="xxxx",//en oracle se pone el nombre del servicio
             Username= "xx",
             Password= "xxxx"
