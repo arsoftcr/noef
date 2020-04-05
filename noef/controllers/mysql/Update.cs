@@ -9,14 +9,14 @@ namespace noef.controllers.mysql
 {
     public class Update
     {
-        public async Task<int> UpdateDatabase(ConexionMysql con, string consulta, Dictionary<string, object> paramts)
+        public async Task<int> UpdateDatabase(Conexion con, string consulta, Dictionary<string, object> paramts)
         {
 
 
 
             try
             {
-                using (var conexion = new MySqlConnection("server=" + con.Server + ";port=" + con.Port + ";username=" + con.Username + ";password=" + con.Password + ";SslMode = none;database=" + con.Bd + ""))
+                using (var conexion = new MySqlConnection("server=" + con.Servidor + ";port=" + con.Port + ";username=" + con.Usuario + ";password=" + con.Password + ";SslMode = none;database=" + con.BaseDatos + ""))
                 {
 
                     await conexion.OpenAsync();

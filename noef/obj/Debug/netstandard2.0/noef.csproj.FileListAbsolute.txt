@@ -36,3 +36,9 @@ C:\Users\rviquez\Source\Repos\noef\noef\obj\Debug\netstandard2.0\noef.AssemblyIn
 C:\Users\rviquez\Source\Repos\noef\noef\obj\Debug\netstandard2.0\noef.AssemblyInfo.cs
 C:\Users\rviquez\Source\Repos\noef\noef\obj\Debug\netstandard2.0\noef.dll
 C:\Users\rviquez\Source\Repos\noef\noef\obj\Debug\netstandard2.0\noef.pdb
+C:\Users\rviquez\Source\Repos\noef\noef\obj\Debug\netstandard2.0\noef.csprojAssemblyReference.cache
+C:\Users\rviquez\Source\Repos\noef\noef\obj\Debug\netstandard2.0\noef.csproj.CoreCompileInputs.cache
+C:\Users\rviquez\Source\Repos\noef\noef\bin\Debug\netstandard2.0\Newtonsoft.Json.dll
+C:\Users\rviquez\Source\Repos\noef\noef\bin\Debug\netstandard2.0\Newtonsoft.Json.pdb
+C:\Users\rviquez\Source\Repos\noef\noef\bin\Debug\netstandard2.0\Newtonsoft.Json.xml
+C:\Users\rviquez\Source\Repos\noef\noef\obj\Debug\netstandard2.0\noef.csproj.CopyComplete

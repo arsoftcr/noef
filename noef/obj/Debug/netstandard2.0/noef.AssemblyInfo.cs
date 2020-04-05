@@ -16,11 +16,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Realiza la consulta en la base de datos mysql,postgres,sql server,oracle especifi" +
     "cada de forma asíncrona y devuelve los resultados en una lista de objetos anónim" +
     "os {columna=xx,valor=xxx} .")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("2.0.8.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2.0.8")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("2.0.9.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2.0.9")]
 [assembly: System.Reflection.AssemblyProductAttribute("noef")]
 [assembly: System.Reflection.AssemblyTitleAttribute("noef")]
-[assembly: System.Reflection.AssemblyVersionAttribute("2.0.8.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("2.0.9.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
 

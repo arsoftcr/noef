@@ -9,13 +9,13 @@ namespace noef.controllers.oracle
 {
     public class Insert
     {
-        public async Task<int> InsertDatabase(ConexionOracle con, string consulta,Dictionary<string,object> paramts)
+        public async Task<int> InsertDatabase(Conexion con, string consulta,Dictionary<string,object> paramts)
         {
 
 
             try
             {
-                using (var conexion = new OracleConnection("Data Source=" + con.Datasource + ":" + con.Port + "/" + con.Servicio + ";User Id=" + con.UserId + ";Password=" + con.Password + ";"))
+                using (var conexion = new OracleConnection("Data Source=" + con.Servidor + ":" + con.Port + "/" + con.BaseDatos + ";User Id=" + con.Usuario + ";Password=" + con.Password + ";"))
                 {
 
                     await conexion.OpenAsync();

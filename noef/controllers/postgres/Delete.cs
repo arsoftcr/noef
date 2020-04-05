@@ -9,14 +9,14 @@ namespace noef.controllers.postgres
 {
     public class Delete
     {
-        public async Task<int> DelteDatabase(ConexionPostgres con, string consulta, Dictionary<string, object> paramts)
+        public async Task<int> DelteDatabase(Conexion con, string consulta, Dictionary<string, object> paramts)
         {
 
 
 
             try
             {
-                using (var conexion = new NpgsqlConnection("Host=" + con.Host + ";Port=" + con.Port + ";User ID=" + con.UserId + ";Password=" + con.Password + ";Database=" + con.Database + ""))
+                using (var conexion = new NpgsqlConnection("Host=" + con.Servidor + ";Port=" + con.Port + ";User ID=" + con.Usuario + ";Password=" + con.Password + ";Database=" + con.BaseDatos + ""))
                 {
 
                     await conexion.OpenAsync();

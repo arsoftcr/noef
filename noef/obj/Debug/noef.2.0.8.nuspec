@@ -14,6 +14,7 @@
     <repository url="https://github.com/arsoftcr/noef" />
     <dependencies>
       <group targetFramework=".NETStandard2.0">
+        <dependency id="Newtonsoft.Json" version="12.0.3" exclude="Build,Analyzers" />
         <dependency id="MySql.Data" version="8.0.19" exclude="Build,Analyzers" />
         <dependency id="Npgsql" version="4.1.3" exclude="Build,Analyzers" />
         <dependency id="Oracle.ManagedDataAccess" version="19.6.0" exclude="Build,Analyzers" />

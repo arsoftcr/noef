@@ -9,7 +9,7 @@ namespace noef.controllers.sql
 {
     public class Delete
     {
-        public async Task<int> DeleteDatabase(ConexionSQL con, string consulta, Dictionary<string, object> paramts)
+        public async Task<int> DeleteDatabase(Conexion con, string consulta, Dictionary<string, object> paramts)
         {
 
 
@@ -17,7 +17,7 @@ namespace noef.controllers.sql
 
             try
             {
-                using (var conexion = new SqlConnection("Server=" + con.Servidor + ";Initial Catalog=" + con.BD + ";User Id=" + con.Usuario + ";Password=" + con.Password + ";Persist Security Info=True;MultipleActiveResultSets=True;"))
+                using (var conexion = new SqlConnection("Server=" + con.Servidor + ";Initial Catalog=" + con.BaseDatos + ";User Id=" + con.Usuario + ";Password=" + con.Password + ";Persist Security Info=True;MultipleActiveResultSets=True;"))
                 {
 
                     await conexion.OpenAsync();

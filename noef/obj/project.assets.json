@@ -1239,6 +1239,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "Newtonsoft.Json/11.0.1-beta2": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Newtonsoft.Json.dll": {}
+        }
       }
     }
   },
@@ -5021,12 +5031,18 @@
         "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "Newtonsoft.Json/11.0.1-beta2": {
+      "type": "project",
+      "path": "../../../../Desktop/Newtonsoft.Json/Src/Newtonsoft.Json/Newtonsoft.Json.csproj",
+      "msbuildProject": "../../../../Desktop/Newtonsoft.Json/Src/Newtonsoft.Json/Newtonsoft.Json.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "MySql.Data >= 8.0.19",
       "NETStandard.Library >= 2.0.3",
+      "Newtonsoft.Json >= 12.0.3",
       "Npgsql >= 4.1.3",
       "Oracle.ManagedDataAccess >= 19.6.0",
       "System.Collections >= 4.3.0",
@@ -5042,7 +5058,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "2.0.8",
+    "version": "2.0.9",
     "restore": {
       "projectUniqueName": "C:\\Users\\rviquez\\Source\\Repos\\noef\\noef\\noef.csproj",
       "projectName": "noef",
@@ -5070,7 +5086,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\rviquez\\Desktop\\Newtonsoft.Json\\Src\\Newtonsoft.Json\\Newtonsoft.Json.csproj": {
+              "projectPath": "C:\\Users\\rviquez\\Desktop\\Newtonsoft.Json\\Src\\Newtonsoft.Json\\Newtonsoft.Json.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -5091,6 +5111,10 @@
             "target": "Package",
             "version": "[2.0.3, )",
             "autoReferenced": true
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[12.0.3, )"
           },
           "Npgsql": {
             "target": "Package",
@@ -5131,7 +5155,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
       }
     }
   },
