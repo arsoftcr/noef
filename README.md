@@ -10,7 +10,7 @@ Se debe instalar el paquete nuget en visual studio o por consola: https://www.nu
 | ------------------- |-------------------|
 
 |MYSQL|SELECT,INSERT,UPDATE,DELETE|
-|SQL |SERVER|SELECT,INSERT,UPDATE,DELETE|
+|SQL SERVER|SELECT,INSERT,UPDATE,DELETE|
 |POSTGRES|SELECT,INSERT,UPDATE,DELETE|
 |ORACLE|SELECT,INSERT,UPDATE,DELETE|
 
