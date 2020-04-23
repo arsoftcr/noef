@@ -7,11 +7,12 @@ Se debe instalar el paquete nuget en visual studio o por consola: https://www.nu
 ### Bases de datos soportadas:
 
 |Base de Datos|Operaciones soportadas|
-| ------------------- |------------------- |------------------- |------------------- |
-|MYSQL|SELECT,INSERT|UPDATE|DELETE|
-|SQL SERVER|SELECT,INSERT|UPDATE|DELETE|
-|POSTGRES|SELECT,INSERT|UPDATE|DELETE|
-|ORACLE|SELECT,INSERT|UPDATE|DELETE|
+| ------------------- |-------------------|
+
+|MYSQL|SELECT,INSERT,UPDATE,DELETE|
+|SQL SERVER|SELECT,INSERT,UPDATE,DELETE|
+|POSTGRES|SELECT,INSERT,UPDATE,DELETE|
+|ORACLE|SELECT,INSERT,UPDATE,DELETE|
 
 
 Se debe crear una instancia con los datos de conexión a la base de datos:
