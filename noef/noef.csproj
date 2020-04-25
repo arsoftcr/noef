@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.9</Version>
+    <Version>3.0.0</Version>
     <Description>Realiza la consulta en la base de datos mysql,postgres,sql server,oracle especificada de forma asíncrona y devuelve los resultados en una lista de objetos anónimos {columna=xx,valor=xxx} .</Description>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/arsoftcr/noef</PackageProjectUrl>

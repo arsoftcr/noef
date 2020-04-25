@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>noef</id>
-    <version>2.0.8</version>
+    <version>3.0.0</version>
     <authors>Arsoft CR</authors>
     <owners>Arsoft CR</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -27,7 +27,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\rviquez\Source\Repos\noef\noef\bin\Debug\netstandard2.0\noef.dll" target="lib\netstandard2.0\noef.dll" />
+    <file src="C:\Users\rviquez\Source\Repos\noef\noef\bin\Release\netstandard2.0\noef.dll" target="lib\netstandard2.0\noef.dll" />
     <file src="C:\Users\rviquez\Pictures\about.jpg" target="about.jpg" />
     <file src="C:\Users\rviquez\Source\Repos\noef\LICENSE.md" target="LICENSE.md" />
   </files>
