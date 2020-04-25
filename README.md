@@ -14,7 +14,7 @@ Se debe instalar el paquete nuget en visual studio o por consola: https://www.nu
 |ORACLE|SELECT,INSERT,UPDATE,DELETE|
 
 
-Se debe crear una instancia con los datos de conexión a la base de datos:
+Se debe crear una instancia con los datos de conexión e indicar el tipo de base de datos:
   
          Conexion conexion = new Conexion
         {
@@ -22,17 +22,18 @@ Se debe crear una instancia con los datos de conexión a la base de datos:
             Port="xx",//opcional en sql
             BaseDatos="xxxx",//en oracle se pone el nombre del servicio
             Username= "xx",
-            Password= "xxxx"
+            Password= "xxxx",
+            Tipo=tipo.SQL // tipo.SQL, tipo.Oracle, tipo.Mysql, tipo.Postgres
 
         };
 
       
  Seguidamente se instancia la clase para hacer las consultas:
  
-        noef.controllers.mysql.Select mysqlCon = new noef.controllers.mysql.Select();
-        noef.controllers.sql.Select sqlCon = new noef.controllers.sql.Select();
-        noef.controllers.oracle.Select oracleCon = new noef.controllers.oracle.Select();
-        noef.controllers.postgres.Select postgresCon = new noef.controllers.postgres.Select();
+        noef.Payloads mysqlCon = new noef.Payloads();
+        noef.Payloads sqlCon = new noef.Payloads();
+        noef.Payloads oracleCon = new noef.Payloads();
+        noef.Payloads postgresCon = new noef.Payloads();
         
         
 Y por último se hace la consulta pasando como parámetro la instancia de la conexión y la consulta sql:
@@ -55,13 +56,13 @@ Los resultados se podrian acceder de la siguiente forma:
 
           resultado.foreach((x)=>{Console.WriteLine($"{x["columnaRequeridaEnLosResultados"]}");});
           
-Para realizar un insert a la bd se necesita crear una instancia de la clase Insert y pasarle un diccionario de datos con los parámetros y sus valores de la siguiente forma:
+Para realizar un insert,update o delete a la bd se necesita crear una instancia de la clase Payloads y pasarle un diccionario de datos con los parámetros y sus valores de la siguiente forma:
 
 
-           noef.controllers.sql.Insert sqlInsert = new noef.controllers.sql.Insert();
-           noef.controllers.mysql.Insert mysqlInsert = new noef.controllers.mysql.Insert();
-           noef.controllers.postgres.Insert postgresInsert = new noef.controllers.postgres.Insert();
-           noef.controllers.oracle.Insert oracleInsert = new noef.controllers.oracle.Insert();
+           noef.Payloads sqlInsert = new noef.Payloads();
+           noef.Payloads mysqlInsert = new noef.Payloads();
+           noef.Payloads postgresInsert = new noef.Payloads();
+           noef.Payloads oracleInsert = new noef.Payloads();
 
             Dictionary<string,object> diccio = new Dictionary<string,object>();
 
@@ -79,10 +80,17 @@ Para realizar un insert a la bd se necesita crear una instancia de la clase Inse
 
             diccio.Add("desc","testoracle");
 
-            var resultado = await sqlInsert.InsertDatabase(conexion,"insert into loquesea(Descripcion)values(@desc)",diccio);
-              var resultado = await mysqlInsert.InsertDatabase(conexion,"insert into loquesea(Descripcion)values(@desc)",diccio);
-                var resultado = await postgresInsert.InsertDatabase(conexion,"insert into loquesea(Descripcion)values(@desc)",diccio);
-                  var resultado = await oracleInsert.InsertDatabase(conexion,"insert into loquesea(Descripcion)values(@desc)",diccio);
+         var resultado = await sqlInsert.InsertOrUpdateOrDeleteDatabase(conexion,
+         "insert into loquesea(Descripcion)values(@desc)",diccio);
+         
+              var resultado = await mysqlInsert.InsertOrUpdateOrDeleteDatabase(conexion,
+              "insert into loquesea(Descripcion)values(@desc)",diccio);
+              
+                var resultado = await postgresInsert.InsertOrUpdateOrDeleteDatabase(conexion,
+                "insert into loquesea(Descripcion)values(@desc)",diccio);
+                
+                  var resultado = await oracleInsert.InsertOrUpdateOrDeleteDatabase(conexion,
+                  "insert into loquesea(Descripcion)values(@desc)",diccio);
                   
 
             if (resultado == 0)
@@ -93,6 +101,7 @@ Para realizar un insert a la bd se necesita crear una instancia de la clase Inse
             {
                 // OK
             }
+          
           
           
      
