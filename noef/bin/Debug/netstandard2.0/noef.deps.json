@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "noef/4.0.0": {
+      "noef/4.0.1": {
         "dependencies": {
           "MySql.Data": "8.0.19",
           "NETStandard.Library": "2.0.3",
@@ -972,7 +972,7 @@
     }
   },
   "libraries": {
-    "noef/4.0.0": {
+    "noef/4.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
