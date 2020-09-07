@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>3.0.0</Version>
-    <Description>Realiza la consulta en la base de datos mysql,postgres,sql server,oracle especificada de forma asíncrona y devuelve los resultados en una lista de objetos anónimos {columna=xx,valor=xxx} .</Description>
+    <Version>4.0.0</Version>
+    <Description>Realiza la consulta en la base de datos mysql,postgres,sql server,oracle especificada de forma asíncrona y devuelve los resultados en una lista de diccionarios que se pueden serializar fácilmente en el objeto deseado.</Description>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/arsoftcr/noef</PackageProjectUrl>
     <RepositoryUrl>https://github.com/arsoftcr/noef</RepositoryUrl>
@@ -12,6 +12,8 @@
     <PackageIcon>about.jpg</PackageIcon>
     <PackageIconUrl />
     <Authors>Arsoft CR</Authors>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <PackageReleaseNotes>Se agrega diccionario para agregar parámetros en las consultas también</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\..\Pictures\about.jpg">
+    <None Include="..\..\..\Pictures\about.jpg">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
@@ -35,10 +37,6 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Desktop\Newtonsoft.Json\Src\Newtonsoft.Json\Newtonsoft.Json.csproj" />
   </ItemGroup>
 
 </Project>

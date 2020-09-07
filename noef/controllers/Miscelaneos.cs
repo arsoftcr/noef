@@ -205,6 +205,62 @@ namespace noef.controllers
         }
 
 
+        public static object agregarParametros(object command, Dictionary<string, object> param)
+        {
+            string tipoCommand = command != null ? command.GetType().Name : "";
+            try
+            {
+                switch (tipoCommand)
+                {
+                    case "SqlCommand":
+
+                        foreach (var item in param)
+                        {
+                            (command as SqlCommand).Parameters.AddWithValue(item.Key, item.Value);
+                        }
+
+
+                        break;
+
+
+                    case "OracleCommand":
+
+                        foreach (var item in param)
+                        {
+                            (command as OracleCommand).Parameters.Add(new OracleParameter(item.Key, item.Value));
+                        }
+
+                        break;
+                    case "MySqlDataReader":
+
+                        foreach (var item in param)
+                        {
+                            (command as MySqlCommand).Parameters.AddWithValue(item.Key, item.Value);
+                        }
+
+                        break;
+                    case "NpgsqlDataReader":
+
+                        foreach (var item in param)
+                        {
+                            (command as NpgsqlCommand).Parameters.AddWithValue(item.Key, item.Value);
+                        }
+
+                        break;
+                    default:
+                        break;
+                }
+
+
+            }
+            catch (Exception g)
+            {
+                Console.WriteLine(g.ToString());
+            }
+
+            return command;
+
+        }
 
 
     }

@@ -21,7 +21,7 @@ namespace noef.controllers
         /// <param name="con"></param>
         /// <param name="consulta"></param>
         /// <returns></returns>
-        public async Task<List<Dictionary<string, object>>> SelectFromDatabase(Conexion con, string consulta)
+        public async Task<List<Dictionary<string, object>>> SelectFromDatabase(Conexion con, string consulta,Dictionary<string,object> param)
         {
 
             List<Dictionary<string, object>> resultados = new List<Dictionary<string, object>>();
@@ -41,6 +41,12 @@ namespace noef.controllers
 
                             using (var comando = new SqlCommand(consulta, conexion))
                             {
+                                if (param != null)
+                                {
+                                    Miscelaneos.agregarParametros(comando, param);
+                                }
+
+
                                 var reader = await comando.ExecuteReaderAsync();
 
                                 resultados=await Miscelaneos.agregarResultados(reader);
@@ -60,6 +66,12 @@ namespace noef.controllers
 
                             using (var comando = new OracleCommand(consulta, conexion))
                             {
+                                if (param != null)
+                                {
+                                    Miscelaneos.agregarParametros(comando, param);
+                                }
+
+
                                 var reader = await comando.ExecuteReaderAsync();
 
 
@@ -79,6 +91,12 @@ namespace noef.controllers
 
                             using (var comando = new NpgsqlCommand(consulta, conexion))
                             {
+                                if (param != null)
+                                {
+                                    Miscelaneos.agregarParametros(comando, param);
+                                }
+
+
                                 var reader = await comando.ExecuteReaderAsync();
 
 
@@ -97,6 +115,12 @@ namespace noef.controllers
 
                             using (var comando = new MySqlCommand(consulta, conexion))
                             {
+                                if (param != null)
+                                {
+                                    Miscelaneos.agregarParametros(comando, param);
+                                }
+
+
                                 var reader = await comando.ExecuteReaderAsync();
 
 
