@@ -44,7 +44,7 @@ Y por último se hace la consulta pasando como parámetro la instancia de la con
           //nota: En oracle se utiliza : en lugar de @
   Nota:También se puede realizar la operación pasando la cadena de conexión como un string:
   
-          var resultado=await payload.SelectFromDatabase("cadenaConexionMysql","select columna from loquesea  where columna=@parametro");
+          var resultado=await payload.SelectFromDatabase("cadenaConexion","select columna from loquesea  where columna=@parametro");
           //nota: En oracle se utiliza : en lugar de @
          
          
