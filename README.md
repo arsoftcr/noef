@@ -41,11 +41,10 @@ Y por último se hace la consulta pasando como parámetro la instancia de la con
             param.Add("@parametro","tests");
             
           var resultado=await payload.SelectFromDatabase(conexion,"select columna from loquesea  where columna=@parametro",param);
-          //nota: En oracle se utiliza : en lugar de @
+          //nota: En oracle se utiliza : en lugar de @, ej: param.Add(":parametro","tests"); (conexion,"select columna from loquesea  where columna=:parametro",param)
   Nota:También se puede realizar la operación pasando la cadena de conexión como un string:
   
           var resultado=await payload.SelectFromDatabase("cadenaConexion","select columna from loquesea");
-          //nota: En oracle se utiliza : en lugar de @
          
          
          
