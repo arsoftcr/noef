@@ -20,7 +20,7 @@ Se debe crear una instancia con los datos de conexión e indicar el tipo de base
          Conexion conexion = new Conexion
         {
             Server= "xxx",
-            Port="xx",//opcional en sql
+            Port="xx",//obligatorio, opcional solo  en sql
             BaseDatos="xxxx",//en oracle se pone el nombre del servicio
             Username= "xx",
             Password= "xxxx",
@@ -31,67 +31,43 @@ Se debe crear una instancia con los datos de conexión e indicar el tipo de base
       
  Seguidamente se instancia la clase para hacer las consultas:
  
-        noef.Payloads mysqlCon = new noef.Payloads();
-        noef.Payloads sqlCon = new noef.Payloads();
-        noef.Payloads oracleCon = new noef.Payloads();
-        noef.Payloads postgresCon = new noef.Payloads();
+        noef.Payloads payload = new noef.Payloads();
         
         
 Y por último se hace la consulta pasando como parámetro la instancia de la conexión y la consulta sql:
+           
+           Dictionary<string,object> param = new Dictionary<string,object>();
 
-          var resultado=await mysqlCon.SelectFromDatabase(conexion,"select columnaRequeridaEnLosResultados from loquesea");
-          var resultado=await sqlCon.SelectFromDatabase(conexion,"select columnaRequeridaEnLosResultados from loquesea");
-          var resultado=await oracleCon.SelectFromDatabase(conexion,"select columnaRequeridaEnLosResultados from loquesea");
-          var resultado=await postgresCon.SelectFromDatabase(conexion,"select columnaRequeridaEnLosResultados from loquesea");
-          
+            param.Add("@parametro","tests");
+            
+          var resultado=await mysqlCon.SelectFromDatabase(conexion,"select columna from loquesea  where columna=@parametro",param);
+          //nota: En oracle se utiliza : en lugar de @
   Nota:También se puede realizar la operación pasando la cadena de conexión como un string:
   
-          var resultado=await mysqlCon.SelectFromDatabase("cadenaConexionMysql","select columnaRequeridaEnLosResultados from loquesea");
-          var resultado=await sqlCon.SelectFromDatabase("cadenaConexionSql","select columnaRequeridaEnLosResultados from loquesea");
-          var resultado=await oracleCon.SelectFromDatabase("cadenaConexionOracle","select columnaRequeridaEnLosResultados from loquesea");
-          var resultado=await postgresCon.SelectFromDatabase("cadenaConexionPostgres","select columnaRequeridaEnLosResultados from loquesea");
+          var resultado=await mysqlCon.SelectFromDatabase("cadenaConexionMysql","select columna from loquesea  where columna=@parametro");
+          //nota: En oracle se utiliza : en lugar de @
          
          
          
 Los resultados se podrian acceder de la siguiente forma:
 
-          resultado.foreach((x)=>{Console.WriteLine($"{x["columnaRequeridaEnLosResultados"]}");});
+          resultado.foreach((x)=>{Console.WriteLine($"{x["columna"]}");});
           
 Para realizar un insert,update o delete a la bd se necesita crear una instancia de la clase Payloads y pasarle un diccionario de datos con los parámetros y sus valores de la siguiente forma:
 
 
-           noef.Payloads sqlInsert = new noef.Payloads();
-           noef.Payloads mysqlInsert = new noef.Payloads();
-           noef.Payloads postgresInsert = new noef.Payloads();
-           noef.Payloads oracleInsert = new noef.Payloads();
+           noef.Payloads insert = new noef.Payloads();
 
             Dictionary<string,object> diccio = new Dictionary<string,object>();
 
             diccio.Add("@desc","testsql");
-            
-             Dictionary<string,object> diccio = new Dictionary<string,object>();
 
-            diccio.Add("@desc","testmysql");
-            
-             Dictionary<string,object> diccio = new Dictionary<string,object>();
-
-            diccio.Add("desc","testpostgres");
-            
-             Dictionary<string,object> diccio = new Dictionary<string,object>();
-
-            diccio.Add("desc","testoracle");
-
-         var resultado = await sqlInsert.InsertOrUpdateOrDeleteDatabase(conexion,
+         var resultado = await insert.InsertOrUpdateOrDeleteDatabase(conexion,
          "insert into loquesea(Descripcion)values(@desc)",diccio);
          
-              var resultado = await mysqlInsert.InsertOrUpdateOrDeleteDatabase(conexion,
-              "insert into loquesea(Descripcion)values(@desc)",diccio);
-              
-                var resultado = await postgresInsert.InsertOrUpdateOrDeleteDatabase(conexion,
-                "insert into loquesea(Descripcion)values(@desc)",diccio);
-                
-                  var resultado = await oracleInsert.InsertOrUpdateOrDeleteDatabase(conexion,
-                  "insert into loquesea(Descripcion)values(@desc)",diccio);
+         
+         //nota: en oracle se deben utilizar los 2 puntos en lugar del arroba de la siguiente forma: diccio.Add(":desc","testsql");
+         "insert into loquesea(Descripcion)values(:desc)"
                   
 
             if (resultado == 0)
