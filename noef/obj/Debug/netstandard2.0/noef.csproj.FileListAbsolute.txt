@@ -45,4 +45,3 @@ C:\Users\Administrator\Desktop\noef\noef\obj\Debug\netstandard2.0\noef.AssemblyI
 C:\Users\Administrator\Desktop\noef\noef\obj\Debug\netstandard2.0\noef.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\noef\noef\obj\Debug\netstandard2.0\noef.dll
 C:\Users\Administrator\Desktop\noef\noef\obj\Debug\netstandard2.0\noef.pdb
-C:\Users\Administrator\Desktop\noef\noef\obj\Debug\netstandard2.0\noef.csprojAssemblyReference.cache

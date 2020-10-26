@@ -231,7 +231,7 @@ namespace noef.controllers
                         }
 
                         break;
-                    case "MySqlDataReader":
+                    case "MySqlCommand":
 
                         foreach (var item in param)
                         {
@@ -239,11 +239,12 @@ namespace noef.controllers
                         }
 
                         break;
-                    case "NpgsqlDataReader":
+                    case "NpgsqlCommand":
 
                         foreach (var item in param)
                         {
-                            (command as NpgsqlCommand).Parameters.AddWithValue(item.Key, item.Value);
+
+                            (command as NpgsqlCommand).Parameters.AddWithValue(item.Key.Replace("@", ""), item.Value);
                         }
 
                         break;

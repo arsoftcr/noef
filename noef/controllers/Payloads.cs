@@ -97,6 +97,7 @@ namespace noef.controllers
                                 }
 
 
+                                
                                 var reader = await comando.ExecuteReaderAsync();
 
 
