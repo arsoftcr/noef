@@ -15,7 +15,7 @@ Se debe instalar el paquete nuget en visual studio o por consola: https://www.nu
 |ORACLE|SELECT,INSERT,UPDATE,DELETE|
 
 
-Se debe crear una instancia con los datos de conexión e indicar el tipo de base de datos:
+Se debe crear una instancia con los datos de conexión e indicar el tipo de base de datos, opcionalmente se puede pasar la cadena como un string:
   
          Conexion conexion = new Conexion
         {
