@@ -1,6 +1,6 @@
 # noef  ![NuGet Version](http://img.shields.io/static/v1?label=Arsoftcr&message=La%20mejor%20tecnología&color=blue)
 
-Realiza cualquier consulta  en mysql o postgres o sql server u oracle en forma asíncrona y retorna los resultados en una lista de Dictionary<string,object>
+Realiza cualquier consulta  en mysql o postgres o sql server u oracle en forma asíncrona y retorna los resultados en un objeto JSON o alternativamente en un List<dynamic>()
 
 
 Se debe instalar el paquete nuget en visual studio o por consola: https://www.nuget.org/packages/noef  ![NuGet Version](http://img.shields.io/static/v1?label=Nuget&message=3.0.1&color=blue)
