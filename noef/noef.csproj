@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>4.0.2</Version>
-    <Description>Realiza la consulta en la base de datos mysql,postgres,sql server,oracle especificada de forma asíncrona y devuelve los resultados en una lista de diccionarios que se pueden serializar fácilmente en el objeto deseado.</Description>
+    <Version>4.0.3</Version>
+    <Description>Realiza la consulta en la base de datos mysql,postgres,sql server,oracle especificada de forma asíncrona y devuelve los resultados en un objeto JSON o bien en una lista de objetos de tipo dynamic</Description>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/arsoftcr/noef</PackageProjectUrl>
     <RepositoryUrl>https://github.com/arsoftcr/noef</RepositoryUrl>
@@ -13,7 +13,10 @@
     <PackageIconUrl />
     <Authors>Arsoft CR</Authors>
     <ApplicationIcon>icon.ico</ApplicationIcon>
-    <PackageReleaseNotes>Se agrega diccionario para agregar parámetros en las consultas también</PackageReleaseNotes>
+    <PackageReleaseNotes>Se agrega método para recibir datos en un objeto JSON</PackageReleaseNotes>
+    <OutputType>Library</OutputType>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <Company>Arsoft CR</Company>
   </PropertyGroup>
 
   <ItemGroup>

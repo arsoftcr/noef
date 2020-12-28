@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,18 +22,18 @@ namespace noef.controllers
         /// <param name="con"></param>
         /// <param name="consulta"></param>
         /// <returns></returns>
-        public async Task<List<Dictionary<string, object>>> SelectFromDatabase(Conexion con, string consulta,Dictionary<string,object> param=null)
+        public async Task<string> SelectFromDatabaseJSON(Connection con, string consulta, Dictionary<string, object> param = null)
         {
 
-            List<Dictionary<string, object>> resultados = new List<Dictionary<string, object>>();
+            string records = "";
 
-            string pConexion = Miscelaneos.crearCadena(con);
+            string pConexion = Miscellaneous.createConnection(con);
 
             try
             {
-                switch (con.Tipo)
+                switch (con.TypeConnection)
                 {
-                    case tipo.SQL:
+                    case typeConnection.SQL:
 
                         using (var conexion = new SqlConnection(pConexion))
                         {
@@ -43,21 +44,20 @@ namespace noef.controllers
                             {
                                 if (param != null)
                                 {
-                                    Miscelaneos.agregarParametros(comando, param);
+                                    Miscellaneous.addParameters(comando, param);
                                 }
-
 
                                 var reader = await comando.ExecuteReaderAsync();
 
-                                resultados=await Miscelaneos.agregarResultados(reader);
+                                records = await Miscellaneous.addResults(reader);
 
                             }
-                        
+
                         }
 
 
                         break;
-                    case tipo.Oracle:
+                    case typeConnection.Oracle:
 
                         using (var conexion = new OracleConnection(pConexion))
                         {
@@ -68,21 +68,19 @@ namespace noef.controllers
                             {
                                 if (param != null)
                                 {
-                                    Miscelaneos.agregarParametros(comando, param);
+                                    Miscellaneous.addParameters(comando, param);
                                 }
-
-
                                 var reader = await comando.ExecuteReaderAsync();
 
 
-                                resultados=await Miscelaneos.agregarResultados(reader);
+                                records = await Miscellaneous.addResults(reader);
 
                             }
                         }
 
 
                         break;
-                    case tipo.Postgres:
+                    case typeConnection.Postgres:
 
                         using (var conexion = new NpgsqlConnection(pConexion))
                         {
@@ -93,22 +91,19 @@ namespace noef.controllers
                             {
                                 if (param != null)
                                 {
-                                    Miscelaneos.agregarParametros(comando, param);
+                                    Miscellaneous.addParameters(comando, param);
                                 }
-
-
-                                
                                 var reader = await comando.ExecuteReaderAsync();
 
 
-                                resultados=await Miscelaneos.agregarResultados(reader);
+                                records = await Miscellaneous.addResults(reader);
 
                             }
                         }
 
                         break;
-                    case tipo.Mysql:
-                    
+                    case typeConnection.Mysql:
+
                         using (var conexion = new MySqlConnection(pConexion))
                         {
 
@@ -118,14 +113,12 @@ namespace noef.controllers
                             {
                                 if (param != null)
                                 {
-                                    Miscelaneos.agregarParametros(comando, param);
+                                    Miscellaneous.addParameters(comando, param);
                                 }
-
-
                                 var reader = await comando.ExecuteReaderAsync();
 
 
-                                resultados=await Miscelaneos.agregarResultados(reader);
+                                records = await Miscellaneous.addResults(reader);
 
                             }
                         }
@@ -135,47 +128,38 @@ namespace noef.controllers
                     default:
                         break;
                 }
-               
-
-
-                return resultados;
 
             }
             catch (Exception e)
             {
-                Dictionary<string, object> columnas = new Dictionary<string, object>();
-
-                columnas.Add("error", e.ToString());
-
-                resultados.Add(columnas);
-
-                return resultados;
             }
 
+
+            return records;
 
         }
 
         /// <summary>
-        /// Ejecuta la consulta recibida en la base de datos. Recibe la conexión como un string
+        /// Ejecuta la consulta recibida en la base de datos.Recibe la conexión como un objeto
         /// </summary>
         /// <param name="con"></param>
         /// <param name="consulta"></param>
-        /// <param name="tipo"></param>
+        /// <param name="param"></param>
         /// <returns></returns>
-        public async Task<List<Dictionary<string, object>>> SelectFromDatabase(string con, 
-            string consulta,tipo tipo, Dictionary<string, object> param = null)
+        public async Task<List<dynamic>> SelectFromDatabaseGenericObject(Connection con, string consulta, Dictionary<string, object> param = null)
         {
 
-            List<Dictionary<string, object>> resultados = new List<Dictionary<string, object>>();
+            List<ExpandoObject> records = new List<ExpandoObject>();
 
-           
+            string pConexion = Miscellaneous.createConnection(con);
+
             try
             {
-                switch (tipo)
+                switch (con.TypeConnection)
                 {
-                    case tipo.SQL:
+                    case typeConnection.SQL:
 
-                        using (var conexion = new SqlConnection(con))
+                        using (var conexion = new SqlConnection(pConexion))
                         {
 
                             await conexion.OpenAsync();
@@ -184,12 +168,12 @@ namespace noef.controllers
                             {
                                 if (param != null)
                                 {
-                                    Miscelaneos.agregarParametros(comando, param);
+                                    Miscellaneous.addParameters(comando, param);
                                 }
 
                                 var reader = await comando.ExecuteReaderAsync();
 
-                                resultados = await Miscelaneos.agregarResultados(reader);
+                                records = await Miscellaneous.addResultsGenericObject(reader);
 
                             }
 
@@ -197,9 +181,9 @@ namespace noef.controllers
 
 
                         break;
-                    case tipo.Oracle:
+                    case typeConnection.Oracle:
 
-                        using (var conexion = new OracleConnection(con))
+                        using (var conexion = new OracleConnection(pConexion))
                         {
 
                             await conexion.OpenAsync();
@@ -208,21 +192,21 @@ namespace noef.controllers
                             {
                                 if (param != null)
                                 {
-                                    Miscelaneos.agregarParametros(comando, param);
+                                    Miscellaneous.addParameters(comando, param);
                                 }
                                 var reader = await comando.ExecuteReaderAsync();
 
 
-                                resultados = await Miscelaneos.agregarResultados(reader);
+                                records = await Miscellaneous.addResultsGenericObject(reader);
 
                             }
                         }
 
 
                         break;
-                    case tipo.Postgres:
+                    case typeConnection.Postgres:
 
-                        using (var conexion = new NpgsqlConnection(con))
+                        using (var conexion = new NpgsqlConnection(pConexion))
                         {
 
                             await conexion.OpenAsync();
@@ -231,20 +215,20 @@ namespace noef.controllers
                             {
                                 if (param != null)
                                 {
-                                    Miscelaneos.agregarParametros(comando, param);
+                                    Miscellaneous.addParameters(comando, param);
                                 }
                                 var reader = await comando.ExecuteReaderAsync();
 
 
-                                resultados = await Miscelaneos.agregarResultados(reader);
+                                records = await Miscellaneous.addResultsGenericObject(reader);
 
                             }
                         }
 
                         break;
-                    case tipo.Mysql:
+                    case typeConnection.Mysql:
 
-                        using (var conexion = new MySqlConnection(con))
+                        using (var conexion = new MySqlConnection(pConexion))
                         {
 
                             await conexion.OpenAsync();
@@ -253,12 +237,12 @@ namespace noef.controllers
                             {
                                 if (param != null)
                                 {
-                                    Miscelaneos.agregarParametros(comando, param);
+                                    Miscellaneous.addParameters(comando, param);
                                 }
                                 var reader = await comando.ExecuteReaderAsync();
 
 
-                                resultados = await Miscelaneos.agregarResultados(reader);
+                                records = await Miscellaneous.addResultsGenericObject(reader);
 
                             }
                         }
@@ -270,21 +254,12 @@ namespace noef.controllers
                 }
 
 
-
-                return resultados;
-
             }
             catch (Exception e)
             {
-                Dictionary<string, object> columnas = new Dictionary<string, object>();
-
-                columnas.Add("error", e.ToString());
-
-                resultados.Add(columnas);
-
-                return resultados;
             }
 
+            return records.Cast<dynamic>().ToList();
 
         }
 
@@ -296,17 +271,17 @@ namespace noef.controllers
         /// <param name="consulta"></param>
         /// <param name="paramts"></param>
         /// <returns></returns>
-        public async Task<int> InsertOrUpdateOrDeleteDatabase(Conexion con, string consulta, Dictionary<string, object> paramts)
+        public async Task<int> InsertOrUpdateOrDeleteDatabase(Connection con, string consulta, Dictionary<string, object> paramts)
         {
 
 
-            string pConexion = Miscelaneos.crearCadena(con);
+            string pConexion = Miscellaneous.createConnection(con);
 
             try
             {
-                switch (con.Tipo)
+                switch (con.TypeConnection)
                 {
-                    case tipo.SQL:
+                    case typeConnection.SQL:
 
                         using (var conexion = new SqlConnection(pConexion))
                         {
@@ -328,7 +303,7 @@ namespace noef.controllers
                         }
 
                         return 1;
-                    case tipo.Oracle:
+                    case typeConnection.Oracle:
 
                         using (var conexion = new OracleConnection(pConexion))
                         {
@@ -350,7 +325,7 @@ namespace noef.controllers
                         }
 
                         return 1;
-                    case tipo.Postgres:
+                    case typeConnection.Postgres:
 
                         using (var conexion = new NpgsqlConnection(pConexion))
                         {
@@ -372,7 +347,7 @@ namespace noef.controllers
                         }
 
                         return 1;
-                    case tipo.Mysql:
+                    case typeConnection.Mysql:
 
                         using (var conexion = new MySqlConnection(pConexion))
                         {
@@ -408,125 +383,6 @@ namespace noef.controllers
 
         }
 
-
-        /// <summary>
-        /// Ejecuta un insert,update o delete en la base de datos. Recibe la conexión como un string
-        /// </summary>
-        /// <param name="con"></param>
-        /// <param name="consulta"></param>
-        /// <param name="paramts"></param>
-        /// <param name="tipo"></param>
-        /// <returns></returns>
-        public async Task<int> InsertOrUpdateOrDeleteDatabase(string con, 
-            string consulta, Dictionary<string, object> paramts,tipo tipo)
-        {
-
-
-            try
-            {
-                switch (tipo)
-                {
-                    case tipo.SQL:
-
-                        using (var conexion = new SqlConnection(con))
-                        {
-
-                            await conexion.OpenAsync();
-
-                            using (var comando = new SqlCommand(consulta, conexion))
-                            {
-                                foreach (var item in paramts)
-                                {
-                                    comando.Parameters.AddWithValue(item.Key, item.Value);
-                                }
-
-                                var reader = await comando.ExecuteReaderAsync();
-
-
-
-                            }
-                        }
-
-                        return 1;
-                    case tipo.Oracle:
-
-                        using (var conexion = new OracleConnection(con))
-                        {
-
-                            await conexion.OpenAsync();
-
-                            using (var comando = new OracleCommand(consulta, conexion))
-                            {
-                                foreach (var item in paramts)
-                                {
-                                    comando.Parameters.Add(item.Key, item.Value);
-                                }
-                                var reader = await comando.ExecuteReaderAsync();
-
-
-
-
-                            }
-                        }
-
-                        return 1;
-                    case tipo.Postgres:
-
-                        using (var conexion = new NpgsqlConnection(con))
-                        {
-
-                            await conexion.OpenAsync();
-
-                            using (var comando = new NpgsqlCommand(consulta, conexion))
-                            {
-                                foreach (var item in paramts)
-                                {
-                                    comando.Parameters.AddWithValue(item.Key.Replace("@", ""), item.Value);
-                                }
-                                var reader = await comando.ExecuteReaderAsync();
-
-
-
-
-                            }
-                        }
-
-                        return 1;
-                    case tipo.Mysql:
-
-                        using (var conexion = new MySqlConnection(con))
-                        {
-
-                            await conexion.OpenAsync();
-
-                            using (var comando = new MySqlCommand(consulta, conexion))
-                            {
-
-                                foreach (var item in paramts)
-                                {
-                                    comando.Parameters.AddWithValue(item.Key, item.Value);
-                                }
-                                var reader = await comando.ExecuteReaderAsync();
-
-
-
-                            }
-                        }
-                        return 1;
-                    default:
-                        return 0;
-
-                }
-
-
-            }
-            catch (Exception e)
-            {
-                return 0;
-            }
-
-
-        }
 
 
     }
