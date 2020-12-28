@@ -54,10 +54,10 @@ Y por último se hace la consulta pasando como parámetro la instancia de la con
 Los resultados se podrian acceder de la siguiente forma:
 
           si se utiliza el método SelectFromDatabaseJSON() entonces se puede deserealizar el JSON en el objeto de clase deseado:
-          JsonConvert.DeserealizeObject<T>(json)
+          ejemplo : JsonConvert.DeserealizeObject<T>(json)
           o si se utiliza el método SelectFromDatabaseGenericObject() 
           entonces se puede acceder directamente a las propiedades mediante dynamic:
-          expando.FirstOrDefault().NombrePropiedad
+          ejemplo : expando.FirstOrDefault().NombrePropiedad
           
 Para realizar un insert,update o delete a la bd se necesita crear una instancia de la clase Payloads y pasarle un diccionario de datos con los parámetros y sus valores de la siguiente forma:
 
