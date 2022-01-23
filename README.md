@@ -9,10 +9,10 @@ Se debe instalar el paquete nuget en visual studio o por consola: https://www.nu
 
 |Base de Datos|Operaciones soportadas|
 | ------------------- | ------------------- |
-|MYSQL|SELECT,INSERT,UPDATE,DELETE|
-|SQL SERVER|SELECT,INSERT,UPDATE,DELETE|
-|POSTGRES|SELECT,INSERT,UPDATE,DELETE|
-|ORACLE|SELECT,INSERT,UPDATE,DELETE|
+|MYSQL|SELECT,INSERT,UPDATE,DELETE,FUNCTIONS,STORE PROCEDURES|
+|SQL SERVER|SELECT,INSERT,UPDATE,DELETE,FUNCTIONS,STORE PROCEDURES|
+|POSTGRES|SELECT,INSERT,UPDATE,DELETE,FUNCTIONS,STORE PROCEDURES|
+|ORACLE|SELECT,INSERT,UPDATE,DELETE,FUNCTIONS,STORE PROCEDURES|
 
 
 Se debe crear una instancia con los datos de conexión e indicar el tipo de base de datos, opcionalmente se puede pasar la cadena como un string:
