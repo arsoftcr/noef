@@ -3,7 +3,7 @@
 Realiza cualquier consulta  en mysql o postgres o sql server u oracle en forma asíncrona y retorna los resultados en un objeto JSON o alternativamente en un List<dynamic>()
 
 
-Se debe instalar el paquete nuget en visual studio o por consola: https://www.nuget.org/packages/noef  ![NuGet Version](http://img.shields.io/static/v1?label=Nuget&message=3.0.1&color=blue)
+Se debe instalar el paquete nuget en visual studio o por consola: https://www.nuget.org/packages/noef  ![Nuget](https://img.shields.io/nuget/v/noef?label=Richard%20V%C3%ADquez)
 
 ### Bases de datos soportadas:
 
